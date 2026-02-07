@@ -29,6 +29,7 @@ author:
   bio              : "PhD student at The Ohio State University."
   location         : "Columbus, Ohio"
   employer         : "CSE Department, The Ohio State University"
+  employer_uri     : "https://cse.osu.edu"
   uri              : # URL
   email            : "zhang.16414@osu.edu" 
 
