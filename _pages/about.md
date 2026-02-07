@@ -1,6 +1,7 @@
 ---
 permalink: /
-title: "About Me"
+title: "Muge Zhang"
+description: "Muge Zhang is a first-year PhD student in the Department of Computer Science and Engineering at The Ohio State University, advised by Sachin Kumar."
 author_profile: true
 redirect_from:
   - /about/

@@ -12,7 +12,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Muge Zhang"
 title_separator          : "-"
 name                     : &name "Muge Zhang"
-description              : &description "PhD student in Computer Science at The Ohio State University"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Muge Zhang is a PhD student in Computer Science and Engineering at The Ohio State University, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://mugezhang-1.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -29,7 +29,7 @@ author:
   bio              : "PhD student at The Ohio State University."
   location         : "Columbus, Ohio"
   employer         : "The Ohio State University"
-  uri              : # URL
+  uri              : "https://mugezhang-1.github.io"
   email            : "zhang.16414@osu.edu" 
 
   # Academic websites
@@ -138,19 +138,24 @@ yandex_site_verification :
 
 # Social Sharing
 twitter:
-  username               : &twitter
+  username               : &twitter "miuzhi123"
 facebook:
   username               :
   app_id                 :
   publisher              :
 og_image                 :  # Social media default site image
-og_description           :  # Social media default site image description
+og_description           : "Muge Zhang is a PhD student in Computer Science and Engineering at The Ohio State University, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type                   : "Person" # Person or Organization (defaults to Person)
+  name                   : "Muge Zhang" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://mugezhang-1.github.io"
+    - "https://scholar.google.ca/citations?user=9gjqW4YAAAAJ&hl=en"
+    - "https://www.linkedin.com/in/muge-z-6b2186277"
+    - "https://github.com/mugezhang-1"
+    - "https://twitter.com/miuzhi123"
 
 
 # Analytics
