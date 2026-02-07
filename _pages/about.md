@@ -1,7 +1,7 @@
 ---
 permalink: /
-title: "Muge Zhang | PhD Student at The Ohio State University"
-description: "Muge Zhang's personal website. First-year PhD student in the Department of Computer Science and Engineering at The Ohio State University, advised by Sachin Kumar."
+title: "Muge Zhang - PhD Student at The Ohio State University"
+description: "Personal website of Muge Zhang. First-year PhD student in the Department of Computer Science and Engineering at The Ohio State University, advised by Sachin Kumar."
 author_profile: true
 redirect_from:
   - /about/
