@@ -24,7 +24,7 @@ repository               : "mugezhang-1/mugezhang-1.github.io"
 author:
   # Biographic information
   avatar           : "profile_pic.jpeg"
-  name             : "Muge Zhang (/ˈmuːɡə/)"
+  name             : "Muge Zhang"
   pronouns         : "he/him"
   bio              : "PhD student at The Ohio State University."
   location         : "Columbus, Ohio"
@@ -35,7 +35,7 @@ author:
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.ca/citations?user=9gjqW4YAAAAJ&hl=en"
+  googlescholar    : "https://scholar.google.com/citations?user=9gjqW4YAAAAJ&hl=en"
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : # URL
@@ -143,7 +143,7 @@ facebook:
   username               :
   app_id                 :
   publisher              :
-og_image                 :  # Social media default site image
+og_image                 : "profile_pic.jpeg" # Social media default site image
 og_description           : "Muge Zhang is a PhD student in Computer Science and Engineering at The Ohio State University, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
@@ -152,7 +152,7 @@ social:
   name                   : "Muge Zhang" # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - "https://mugezhang-1.github.io"
-    - "https://scholar.google.ca/citations?user=9gjqW4YAAAAJ&hl=en"
+    - "https://scholar.google.com/citations?user=9gjqW4YAAAAJ&hl=en"
     - "https://www.linkedin.com/in/muge-z-6b2186277"
     - "https://github.com/mugezhang-1"
     - "https://twitter.com/miuzhi123"
