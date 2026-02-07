@@ -155,9 +155,17 @@ social:
 
 # Analytics
 analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
+  provider               :  "custom" # Set to "false" to disable all analytics quickly.
   google:
-    tracking_id          :
+    tracking_id          : # GA4 Measurement ID, e.g. G-XXXXXXXXXX
+
+# Visitor counter shown in the footer.
+visitor_counter:
+  enabled                : true
+  provider               : "hits-seeyoufarm"
+  label                  : "visitors"
+  count_bg               : "007ACC"
+  title_bg               : "555555"
 
 
 # Reading Files

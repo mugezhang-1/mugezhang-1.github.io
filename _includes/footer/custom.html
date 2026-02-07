@@ -2,6 +2,15 @@
 
 <a href="/sitemap/">Sitemap</a>
 
+{% if site.visitor_counter.enabled and site.visitor_counter.provider == "hits-seeyoufarm" %}
+{% assign visitor_target = site.url | append: site.baseurl | uri_escape %}
+<p class="page__footer-visitor-counter">
+  <a href="https://hits.seeyoufarm.com" aria-label="Visitor counter">
+    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url={{ visitor_target }}&count_bg=%23{{ site.visitor_counter.count_bg | default: '007ACC' }}&title_bg=%23{{ site.visitor_counter.title_bg | default: '555555' }}&icon=github.svg&icon_color=%23E7E7E7&title={{ site.visitor_counter.label | default: 'visitors' | uri_escape }}&edge_flat=false" alt="Visitor counter" />
+  </a>
+</p>
+{% endif %}
+
 <!-- Support for MatJax -->
 <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
