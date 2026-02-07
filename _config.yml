@@ -12,7 +12,7 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Muge Zhang"
 title_separator          : "-"
 name                     : &name "Muge Zhang"
-description              : &description "Muge Zhang is a PhD student in Computer Science and Engineering at The Ohio State University, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Personal website of Muge Zhang, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://mugezhang-1.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,9 +26,9 @@ author:
   avatar           : "profile_pic.jpeg"
   name             : "Muge Zhang"
   pronouns         : "he/him"
-  bio              : "PhD student at The Ohio State University."
+  bio              : "Researching multimodal LLMs, reasoning, and retrieval-augmented systems."
   location         : "Columbus, Ohio"
-  employer         : "The Ohio State University"
+  employer         :
   uri              : "https://mugezhang-1.github.io"
   email            : "zhang.16414@osu.edu" 
 
@@ -144,7 +144,7 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 : "profile_pic.jpeg" # Social media default site image
-og_description           : "Muge Zhang is a PhD student in Computer Science and Engineering at The Ohio State University, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."
+og_description           : "Personal website of Muge Zhang, focused on multimodal LLMs, reasoning, and retrieval-augmented systems."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
