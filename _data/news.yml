@@ -1,0 +1,13 @@
+# Newest first. `text` supports Markdown.
+- date: 2025-08-06
+  text: "Our paper on synthetic MRI generation for Alzheimer's disease diagnosis appeared at [MIPR 2025](/publication/2025-mipr-alzheimers) in San Jose."
+- date: 2025-08-01
+  text: "Started my PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu), advised by [Sachin Kumar](https://sites.google.com/view/sachinkumar)."
+- date: 2025-01-20
+  text: "Our poster on the microarchitectural characterization of LightGCN and ExpressGNN was presented at [HiPEAC 2025](/publication/2025-hipec-lightgcn) in Barcelona."
+- date: 2024-12-01
+  text: "Paper on scaling hierarchical agglomerative clustering to massive data accepted at [ScalCom 2024](/publication/2024-scalcom-clustering)."
+- date: 2024-11-01
+  text: "Paper on an AI-powered cache mechanism for IoT devices accepted at [CyberC 2024](/publication/2024-cyberc-cache)."
+- date: 2024-10-01
+  text: "Paper on the microarchitectural analysis of ML pre-processing stages accepted at [ACAI 2024](/publication/2024-acai-preprocessing)."

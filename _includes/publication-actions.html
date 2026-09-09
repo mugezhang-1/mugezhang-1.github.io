@@ -1,0 +1,17 @@
+{%- assign pub = include.pub -%}
+{%- assign pid = include.pid -%}
+{%- if pub.paperurl or pub.pdfurl or pub.codeurl or pub.slidesurl or pub.bibtex -%}
+<div class="pub__actions">
+  {%- if pub.paperurl %}<a class="pill" href="{{ pub.paperurl }}" target="_blank" rel="noopener"><i class="fas fa-fw fa-arrow-up-right-from-square" aria-hidden="true"></i>Paper</a>{% endif -%}
+  {%- if pub.pdfurl %}<a class="pill" href="{{ pub.pdfurl }}" target="_blank" rel="noopener"><i class="fas fa-fw fa-file-pdf" aria-hidden="true"></i>PDF</a>{% endif -%}
+  {%- if pub.codeurl %}<a class="pill" href="{{ pub.codeurl }}" target="_blank" rel="noopener"><i class="fab fa-fw fa-github" aria-hidden="true"></i>Code</a>{% endif -%}
+  {%- if pub.slidesurl %}<a class="pill" href="{{ pub.slidesurl }}" target="_blank" rel="noopener"><i class="fas fa-fw fa-person-chalkboard" aria-hidden="true"></i>Slides</a>{% endif -%}
+  {%- if pub.bibtex %}<button class="pill pill--toggle" type="button" data-bibtex-toggle aria-controls="bib-{{ pid }}" aria-expanded="false"><i class="fas fa-fw fa-quote-right" aria-hidden="true"></i>BibTeX</button>{% endif -%}
+</div>
+{%- endif -%}
+{%- if pub.bibtex %}
+<div class="pub__bibtex" id="bib-{{ pid }}" hidden>
+  <button class="pub__copy" type="button" data-copy="bibsrc-{{ pid }}"><i class="fas fa-fw fa-copy" aria-hidden="true"></i><span>Copy</span></button>
+  <pre id="bibsrc-{{ pid }}"><code>{{ pub.bibtex | strip | xml_escape }}</code></pre>
+</div>
+{%- endif %}

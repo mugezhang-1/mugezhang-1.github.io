@@ -1,0 +1,40 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{%- assign pid = page.permalink | slugify -%}
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="page pub-page" itemscope itemtype="http://schema.org/ScholarlyArticle">
+    <meta itemprop="headline" content="{{ page.title | strip_html | escape_once }}">
+    {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
+    <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+
+    <div class="page__inner-wrap">
+      <header class="pub-page__head">
+        <p class="eyebrow">
+          <span class="pub__venue">{{ page.venue_short | default: page.venue }}</span>
+          {%- if page.type %}<span class="pub__type">{{ page.type }}</span>{% endif -%}
+          <span class="pub__year">{{ page.date | date: "%Y" }}</span>
+        </p>
+        <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
+        {%- if page.authors %}<p class="pub__authors">{{ page.authors | replace: "M. Zhang", '<strong class="pub__me">M. Zhang</strong>' }}</p>{% endif -%}
+        <p class="pub__venue-full">{{ page.venue }}</p>
+        {%- if page.tags %}<ul class="pub__tags">{% for t in page.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
+        {% include publication-actions.html pub=page pid=pid %}
+      </header>
+
+      <section class="page__content" itemprop="text">
+        {{ content }}
+        {% if page.citation %}
+        <p class="pub-page__cite"><strong>Cite as</strong> {{ page.citation }}</p>
+        {% endif %}
+      </section>
+
+      <p class="pub-page__back"><a href="{{ base_path }}/publications/"><i class="fas fa-fw fa-arrow-left" aria-hidden="true"></i>All publications</a></p>
+    </div>
+  </article>
+</div>

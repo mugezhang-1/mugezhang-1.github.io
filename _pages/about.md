@@ -1,21 +1,68 @@
 ---
 permalink: /
+layout: home
 title: "Muge Zhang"
-description: "Personal website of Muge Zhang."
+description: "Personal website of Muge Zhang, PhD student in Computer Science and Engineering at The Ohio State University, working on multimodal LLMs, reasoning, and retrieval-augmented systems."
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-I am Muge Zhang, a first-year PhD student in the [Department of Computer Science and Engineering at The Ohio State University](https://cse.osu.edu), broadly interested in multimodal large language models, reasoning, and retrieval-augmented systems. I am advised by [Sachin Kumar](https://sites.google.com/view/sachinkumar), and I am fortunate to work with him. I aim to understand how models access information, reason over it, and ultimately become more reliable and useful for real-world tasks.
+{% include base_path %}
 
-My current focus is on exploring ways to improve the connection between retrieval and reasoning, support multilingual and cross-modal understanding, and develop methods that help LLMs handle complex, structured inputs. More generally, I hope to contribute to building AI systems that integrate strong reasoning with practical utility for everyday users.
+<section class="hero">
+  <p class="eyebrow">PhD student · Computer Science and Engineering · The Ohio State University</p>
+  <h1 class="hero__title">Hi, I'm Muge.</h1>
+  <p class="hero__lead">I study how large language models find information, reason over it, and become more reliable and useful for real-world tasks.</p>
+  <div class="hero__actions">
+    <a class="btn btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
+    <a class="btn btn--outline" href="{{ base_path }}/cv/"><i class="fas fa-file-lines" aria-hidden="true"></i>CV</a>
+    <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>Email</a>
+  </div>
+</section>
 
-## Research Interests
+<section class="section" id="about">
+  <h2>About</h2>
+  <p>I am a PhD student in the <a href="https://cse.osu.edu">Department of Computer Science and Engineering at The Ohio State University</a>, advised by <a href="https://sites.google.com/view/sachinkumar">Sachin Kumar</a>. I am broadly interested in multimodal large language models, reasoning, and retrieval-augmented systems, and in understanding how models access information, reason over it, and ultimately become more reliable for the people who use them.</p>
+  <p>My current focus is on strengthening the connection between retrieval and reasoning, supporting multilingual and cross-modal understanding, and developing methods that help LLMs handle complex, structured inputs. More generally, I want to help build AI systems that pair strong reasoning with practical usefulness for everyday users.</p>
+</section>
 
-- Multimodal Large Language Models
-- Reasoning and Inference
-- Retrieval-Augmented Generation (RAG)
-- Multilingual and Cross-modal Understanding
-- Complex Information Processing
+<section class="section" id="news">
+  <h2>News</h2>
+  {% assign news = site.data.news | sort: "date" | reverse %}
+  <ul class="news">
+    {% for item in news %}
+    <li class="news__item"{% if forloop.index > 4 %} data-news-extra hidden{% endif %}>
+      <time class="news__date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
+      <div class="news__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% if news.size > 4 %}
+  <button class="linkbtn" type="button" data-news-toggle aria-expanded="false" data-more="Show all {{ news.size }} updates" data-less="Show fewer">Show all {{ news.size }} updates</button>
+  {% endif %}
+</section>
+
+<section class="section" id="selected-publications">
+  <div class="section__head">
+    <h2>Selected publications</h2>
+    <a class="section__more" href="{{ base_path }}/publications/">All publications<i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  {% assign selected = site.publications | where: "selected", true | sort: "date" | reverse %}
+  <div class="pub-list">
+    {% for pub in selected %}{% include publication-item.html pub=pub compact=true %}{% endfor %}
+  </div>
+</section>
+
+<section class="section" id="interests">
+  <h2>Research interests</h2>
+  <ul class="chips">
+    <li>Multimodal large language models</li>
+    <li>Reasoning and inference</li>
+    <li>Retrieval-augmented generation</li>
+    <li>Multilingual and cross-modal understanding</li>
+    <li>Complex information processing</li>
+  </ul>
+  <p><a class="section__more" href="{{ base_path }}/research/">Read about my research directions<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
+</section>

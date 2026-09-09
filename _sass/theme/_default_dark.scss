@@ -1,54 +1,60 @@
 /* ==========================================================================
-   DARK THEME
+   DEFAULT THEME — DARK (purple / white / black)
    ========================================================================== */
 
-/* Color codes used for the theme */
-$gray                       : #7a8288;
-$dark-gray                  : mix(#000, $gray, 40%);
-$darker-gray                : mix(#000, $gray, 60%);
-$light-gray                 : mix(#fff, $gray, 50%);
-
-$background                 : #474747;
-$background-light           : mix(#fff, $background, 80%);
-$background-lighter         : mix(#fff, $background, 90%);
-$text                       : #ffffff;
-$link                       : #0ea1c5;
-$link-dark                  : mix(#000, $link, 25%);
-$link-light                 : mix(#fff, $link, 25%);
+/* Color codes used for the theme (kept in sync with the light theme) */
+$gray                       : #6b6879;
+$dark-gray                  : #111114;
+$darker-gray                : #0a0a0d;
+$light-gray                 : #a3a0ad;
 
 /* Color codes used for the site */
-$danger-color               : #ee5f5b;
-$info-color                 : #2f7f93;
-$notice-color               : #7a8288;
-$success-color              : #62c462;
-$warning-color              : #f89406;
+$danger-color               : #f87171;
+$info-color                 : #a78bfa;
+$notice-color               : #a29fb0;
+$success-color              : #4ade80;
+$warning-color              : #fbbf24;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
-$masthead-height            : 70px;
+$border-radius              : 10px;
+$box-shadow                 : 0 1px 2px rgba(0, 0, 0, 0.4);
+$global-transition          : all 0.18s ease;
+$masthead-height            : 64px;
 $navicon-width              : 28px;
-$navicon-height             : 4px;
+$navicon-height             : 3px;
 $sidebar-link-max-width     : 250px;
 $sidebar-screen-min-width   : 1024px;
 
 /* Dark theme for the site */
 html[data-theme="dark"] {
-    --global-base-color                 : #{$background};
-    --global-bg-color                   : #{$background};
-    --global-footer-bg-color            : #{$background};
-    --global-border-color               : #{$light-gray};
-    --global-dark-border-color          : #{$background-light};
-    --global-code-background-color      : #fafafa;
-    --global-code-text-color            : #{$darker-gray};
-    --global-fig-caption-color          : #{$light-gray};
-    --global-link-color                 : #{$link};
-    --global-link-color-hover           : #{$link-dark};
-    --global-link-color-visited         : #{$link-light};
-    --global-masthead-link-color        : #{$text};
-    --global-masthead-link-color-hover  : #{$background-light};
-    --global-text-color                 : #{$text};
-    --global-text-color-light           : #f3f3f3;
-    --global-thead-color                : #{$background-lighter};
+    --global-base-color                 : #8b5cf6;
+    --global-bg-color                   : #0b0a0f;
+    --global-footer-bg-color            : #0b0a0f;
+    --global-border-color               : #24222d;
+    --global-dark-border-color          : #35323f;
+    --global-code-background-color      : #15131c;
+    --global-code-text-color            : #e9d8fd;
+    --global-fig-caption-color          : #a29fb0;
+    --global-link-color                 : #b197fc;
+    --global-link-color-hover           : #c9b8ff;
+    --global-link-color-visited         : #b197fc;
+    --global-masthead-link-color        : #f4f2f8;
+    --global-masthead-link-color-hover  : #c9b8ff;
+    --global-text-color                 : #f4f2f8;
+    --global-text-color-light           : #a29fb0;
+    --global-thead-color                : #15131c;
+
+    --accent                            : #a78bfa;
+    --accent-strong                     : #c4b5fd;
+    --accent-soft                       : #1b1626;
+    --accent-soft-2                     : #2b2140;
+    --accent-contrast                   : #0b0a0f;
+    --surface                           : #110f17;
+    --surface-2                         : #15131c;
+    --muted                             : #a29fb0;
+    --ring                              : rgba(167, 139, 250, 0.40);
+    --shadow-sm                         : 0 1px 2px rgba(0, 0, 0, 0.5);
+    --shadow-md                         : 0 4px 16px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-accent                     : 0 8px 24px rgba(0, 0, 0, 0.45);
+    color-scheme: dark;
 }

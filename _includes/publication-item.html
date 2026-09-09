@@ -1,0 +1,18 @@
+{% include base_path %}
+{%- assign pub = include.pub -%}
+{%- assign pid = pub.permalink | slugify -%}
+{%- assign year = pub.date | date: "%Y" -%}
+<article class="pub{% if include.compact %} pub--compact{% endif %}" data-pub data-year="{{ year }}" data-tags="{{ pub.tags | join: '|' }}">
+  <div class="pub__meta">
+    <span class="pub__venue">{{ pub.venue_short | default: pub.venue }}</span>
+    {%- if pub.type %}<span class="pub__type">{{ pub.type }}</span>{% endif -%}
+    <span class="pub__year">{{ year }}</span>
+  </div>
+  <h3 class="pub__title"><a href="{{ base_path }}{{ pub.url }}">{{ pub.title }}</a></h3>
+  {%- if pub.authors %}<p class="pub__authors">{{ pub.authors | replace: "M. Zhang", '<strong class="pub__me">M. Zhang</strong>' }}</p>{% endif -%}
+  {%- unless include.compact %}<p class="pub__venue-full">{{ pub.venue }}</p>{% endunless -%}
+  {%- if pub.tags and include.compact != true %}
+  <ul class="pub__tags">{% for t in pub.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+  {%- endif %}
+  {% include publication-actions.html pub=pub pid=pid %}
+</article>

@@ -29,7 +29,7 @@ author:
   bio              : "Researching multimodal LLMs, reasoning, and retrieval-augmented systems."
   location         : "Columbus, Ohio"
   employer         :
-  uri              : "https://mugezhang-1.github.io"
+  uri              : # blank hides the self-referencing Website link in the sidebar
   email            : "zhang.16414@osu.edu" 
 
   # Academic websites
@@ -274,7 +274,7 @@ defaults:
       path: ""
       type: publications
     values:
-      layout: single
+      layout: publication
       author_profile: true
       share: true
       comments: true
