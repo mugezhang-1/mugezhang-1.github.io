@@ -15,7 +15,7 @@ description: "Research of Muge Zhang: multilingual language model pretraining be
     <span class="direction__num" aria-hidden="true">01</span>
     <div class="direction__body">
       <h3>Pretraining multilingual models beyond native orthography</h3>
-      <p>Multilingual models share knowledge across languages through shared subwords, and that mechanism breaks when related languages use different scripts. In a controlled pretraining study across eight languages in four typological pairs and three model scales, we compared orthographic text, IPA, and romanization as input representations. Romanized pretraining gave the strongest cross-lingual transfer, the gap over native text widened with scale, and the benefit only appears when pretraining from scratch. I built the full stack for this work: modded-nanoGPT with custom BPE tokenizers and multi-node SLURM training on H100s at the Ohio Supercomputer Center. Accepted to <a href="{{ base_path }}/publication/2026-emnlp-romanization">EMNLP 2026</a>.</p>
+      <p>Multilingual models share knowledge across languages through shared subwords, and that mechanism breaks when related languages use different scripts. In a controlled pretraining study across eight languages in four typological pairs and three model scales, we compared orthographic text, IPA, and romanization as input representations. Romanized pretraining gave the strongest cross-lingual transfer, the gap over native text widened with scale, and the benefit only appears when pretraining from scratch. I built the full stack for this work: modded-nanoGPT with custom BPE tokenizers and multi-node SLURM training on H100s at the Ohio Supercomputer Center. Accepted to <a href="https://arxiv.org/abs/2608.25904">EMNLP 2026</a>.</p>
     </div>
   </article>
   <article class="direction" id="cross-lingual-retrieval">
@@ -29,7 +29,7 @@ description: "Research of Muge Zhang: multilingual language model pretraining be
     <span class="direction__num" aria-hidden="true">03</span>
     <div class="direction__body">
       <h3>Retrieval-grounded medical reasoning</h3>
-      <p>Clinical guidelines cover the common cases, and medical LLMs mostly memorize them. With clinicians at Ohio State we built <a href="{{ base_path }}/publication/2026-ogcarebench">OGCaReBench</a>, a free-form benchmark of expert-validated questions from published case reports; the best model answers 56% without retrieval and up to 82% with it. I am now extending this to images and time: a causal temporal-reasoning benchmark from MIMIC-CXR and MIMIC-IV, where a model sees a prior and a recent chest X-ray plus long EHR context and must identify the event that explains the change, with multimodal reasoners trained by SFT warmup and GRPO-based RL using evidence-grounded rewards.</p>
+      <p>Clinical guidelines cover the common cases, and medical LLMs mostly memorize them. With clinicians at Ohio State we built <a href="https://arxiv.org/abs/2605.21807">OGCaReBench</a>, a free-form benchmark of expert-validated questions from published case reports; the best model answers 56% without retrieval and up to 82% with it. I am now extending this to images and time: a causal temporal-reasoning benchmark from MIMIC-CXR and MIMIC-IV, where a model sees a prior and a recent chest X-ray plus long EHR context and must identify the event that explains the change, with multimodal reasoners trained by SFT warmup and GRPO-based RL using evidence-grounded rewards.</p>
     </div>
   </article>
 </div>

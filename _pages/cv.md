@@ -97,7 +97,7 @@ redirect_from:
   <ol class="cv__pubs">
     {% assign pubs = site.publications | sort: "date" | reverse %}
     {% for pub in pubs %}
-    <li>{{ pub.authors | replace: "M. Zhang", '<strong>M. Zhang</strong>' }}. <a href="{{ base_path }}{{ pub.url }}">{{ pub.title }}</a>. <em>{{ pub.venue_short }}</em>{% if pub.type %} ({{ pub.type }}){% endif %}, {{ pub.date | date: "%Y" }}.</li>
+    <li>{{ pub.authors | replace: "M. Zhang", '<strong>M. Zhang</strong>' }}. {% if pub.paperurl %}<a href="{{ pub.paperurl }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}. <em>{{ pub.venue_short }}</em>{% if pub.type %} ({{ pub.type }}){% endif %}, {{ pub.date | date: "%Y" }}.</li>
     {% endfor %}
   </ol>
   <p class="cv__meta">Full list on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.</p>

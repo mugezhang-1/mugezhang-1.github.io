@@ -9,7 +9,7 @@
     {%- if pub.status %}<span class="pub__type">{{ pub.status }}</span>{% endif -%}
     {%- unless include.hide_year %}<span class="pub__year">{{ year }}</span>{% endunless -%}
   </div>
-  <h3 class="pub__title"><a href="{{ base_path }}{{ pub.url }}">{{ pub.title }}</a></h3>
+  <h3 class="pub__title">{% if pub.paperurl %}<a href="{{ pub.paperurl }}" target="_blank" rel="noopener">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</h3>
   {%- if pub.authors %}<p class="pub__authors">{{ pub.authors | replace: "M. Zhang", '<strong class="pub__me">M. Zhang</strong>' }}</p>{% endif -%}
   {%- unless include.compact %}<p class="pub__venue-full">{{ pub.venue }}</p>{% endunless -%}
   {% include publication-actions.html pub=pub pid=pid %}

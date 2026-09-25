@@ -12,13 +12,14 @@ redirect_from:
 {% include base_path %}
 
 <section class="hero">
+  <div class="hero__glow-wrap" aria-hidden="true"><div class="hero__glow"></div></div>
   <p class="eyebrow">PhD student · Computer Science and Engineering · The Ohio State University</p>
   <h1 class="hero__title">Hi, I'm Muge.</h1>
   <p class="hero__lead">I work on multilingual NLP, retrieval, and multimodal medical reasoning: how language models transfer across writing systems, find the right evidence, and reason over clinical data.</p>
   <div class="hero__actions">
     <a class="btn btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
     <a class="btn btn--outline" href="{{ base_path }}/cv/"><i class="fas fa-file-lines" aria-hidden="true"></i>CV</a>
-    <a class="btn btn--outline" href="mailto:{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>Email</a>
+    <a class="btn btn--outline" href="mailto:{{ site.author.email }}" data-copy-email="{{ site.author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i>Email</a>
   </div>
 </section>
 

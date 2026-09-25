@@ -231,8 +231,7 @@ collections:
     output: true
     permalink: /:collection/:path/
   publications:
-    output: true
-    permalink: /:collection/:path/
+    output: false   # entries are listed on /publications/ and link straight to the paper
   portfolio:
     output: true
     permalink: /:collection/:path/
@@ -267,15 +266,6 @@ defaults:
       type: teaching
     values:
       layout: single
-      author_profile: true
-      share: true
-      comments: true
-  # _publications
-  - scope:
-      path: ""
-      type: publications
-    values:
-      layout: publication
       author_profile: true
       share: true
       comments: true
