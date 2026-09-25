@@ -4,8 +4,8 @@
    ========================================================================== */
 
 /* Color codes used for the theme */
-$gray                       : #666666;
-$dark-gray                  : #111111;
+$gray                       : #525252;
+$dark-gray                  : #0b0b0b;
 $darker-gray                : #0a0a0a;
 $light-gray                 : #a3a0a0;
 $lighter-gray               : #ecebeb;
@@ -13,7 +13,7 @@ $lighter-gray               : #ecebeb;
 /* Color codes used for the site */
 $danger-color               : #dc2626;
 $info-color                 : #bb0000;
-$notice-color               : #666666;
+$notice-color               : #525252;
 $success-color              : #16a34a;
 $warning-color              : #d97706;
 
@@ -36,14 +36,14 @@ $sidebar-screen-min-width   : 1024px;
     --global-dark-border-color          : #d9d4d4;
     --global-code-background-color      : #faf5f5;
     --global-code-text-color            : #7a0000;
-    --global-fig-caption-color          : #666666;
+    --global-fig-caption-color          : #525252;
     --global-link-color                 : #bb0000;
     --global-link-color-hover           : #8a0000;
     --global-link-color-visited         : #bb0000;
-    --global-masthead-link-color        : #111111;
+    --global-masthead-link-color        : #0b0b0b;
     --global-masthead-link-color-hover  : #bb0000;
-    --global-text-color                 : #111111;
-    --global-text-color-light           : #666666;
+    --global-text-color                 : #0b0b0b;
+    --global-text-color-light           : #525252;
     --global-thead-color                : #f7efef;
 
     /* Site accent system (used by _sass/layout/_custom.scss) */
@@ -54,7 +54,7 @@ $sidebar-screen-min-width   : 1024px;
     --accent-contrast                   : #ffffff;
     --surface                           : #ffffff;
     --surface-2                         : #fbf9f9;
-    --muted                             : #666666;
+    --muted                             : #525252;
     --ring                              : rgba(187, 0, 0, 0.30);
     --shadow-sm                         : 0 1px 2px rgba(17, 17, 17, 0.05);
     --shadow-md                         : 0 4px 16px rgba(17, 17, 17, 0.06), 0 1px 3px rgba(17, 17, 17, 0.05);
