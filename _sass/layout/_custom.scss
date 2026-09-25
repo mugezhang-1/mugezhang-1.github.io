@@ -52,10 +52,65 @@ h3 { font-size: 1.125rem; line-height: 1.3; }
 .masthead { animation-delay: 0s; }
 .page__footer { animation-delay: 0.1s; }
 
-/* Content width caps for comfortable reading */
+/* ---------- Page layout: a centered block with a sticky sidebar ----------
+   The base theme floats a fixed sidebar inside a 1280px container, which
+   leaves the content hugging the left edge. From $large up we lay it out
+   as a flex row instead, capped at a width that keeps body text at a
+   comfortable measure and centered in the viewport. The masthead and
+   footer share the same width so their edges line up. */
+$site-max: 68rem;
+$site-pad: 1.5rem;
+$sidebar-w: 13.5rem;
+$sidebar-gap: 3.5rem;
+
 #main { margin-top: 2.25em; }
-.page .page__inner-wrap { max-width: 46rem; }
-.archive { max-width: 52rem; }
+
+@include breakpoint($large) {
+  #main {
+    display: flex;
+    align-items: flex-start;
+    gap: $sidebar-gap;
+    max-width: $site-max;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $site-pad;
+    padding-right: $site-pad;
+
+    /* the base clearfix ::after would become a flex item and eat one gap */
+    &::after { content: none; }
+  }
+
+  .sidebar {
+    position: sticky;
+    top: calc(#{$masthead-height} + 2rem);
+    float: none;
+    flex: 0 0 $sidebar-w;
+    width: $sidebar-w;
+    max-width: none;
+    height: auto;
+    max-height: calc(100vh - #{$masthead-height} - 3rem);
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page,
+  .archive {
+    float: none;
+    flex: 1 1 auto;
+    min-width: 0;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page .page__inner-wrap {
+    float: none;
+    width: auto;
+    max-width: none;
+  }
+}
 
 /* Links, headings and lists inside content areas */
 .page__content,
@@ -635,6 +690,12 @@ h3 { font-size: 1.125rem; line-height: 1.3; }
   &__inner-wrap {
     padding: 0.7em 1.25em;
     font-family: $header-font-family;
+
+    @include breakpoint($large) {
+      max-width: $site-max;
+      padding-left: $site-pad;
+      padding-right: $site-pad;
+    }
   }
 }
 
@@ -696,10 +757,6 @@ h3 { font-size: 1.125rem; line-height: 1.3; }
 /* ---------- Sidebar / author profile ---------- */
 
 .sidebar {
-  @include breakpoint($large) {
-    padding-top: calc(#{$masthead-height} + 1.5rem);
-  }
-
   .author__avatar img {
     max-width: 168px;
     padding: 4px;
@@ -832,6 +889,12 @@ h3 { font-size: 1.125rem; line-height: 1.3; }
     padding: 1.4rem 1.25rem 1.6rem;
     margin-top: 0;
     font-size: 0.85rem;
+
+    @include breakpoint($large) {
+      max-width: $site-max;
+      padding-left: $site-pad;
+      padding-right: $site-pad;
+    }
   }
 
   .footer__copy {
