@@ -1,4 +1,5 @@
-<script type="module" src="{{ base_path }}/assets/js/main.min.js"></script>
-<script defer src="{{ base_path }}/assets/js/site.js"></script>
+{% capture asset_v %}{{ site.time | date: "%Y%m%d%H%M" }}{% endcapture %}
+<script type="module" src="{{ base_path }}/assets/js/main.min.js?v={{ asset_v }}"></script>
+<script defer src="{{ base_path }}/assets/js/site.js?v={{ asset_v }}"></script>
 
 {% include analytics.html %}
