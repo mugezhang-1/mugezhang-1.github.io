@@ -52,7 +52,7 @@ redirect_from:
     <div class="cv__when">2025 – 2026</div>
     <div class="cv__what">
       <strong>Graduate School Fellowship</strong>
-      <span>The Ohio State University · first year of the PhD</span>
+      <span>The Ohio State University · awarded January 2025, supporting the first year of the PhD</span>
     </div>
   </div>
 </section>
