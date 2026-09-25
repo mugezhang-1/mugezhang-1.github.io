@@ -26,7 +26,7 @@ redirect_from:
 
 <section class="section" id="about">
   <h2>About</h2>
-  <p>I am a PhD student in the <a href="https://cse.osu.edu">Department of Computer Science and Engineering at The Ohio State University</a>, advised by <a href="https://sites.google.com/view/sachinkumar">Sachin Kumar</a>. I am broadly interested in multimodal large language models, reasoning, and retrieval-augmented systems, and in understanding how models access information, reason over it, and ultimately become more reliable for the people who use them.</p>
+  <p>I am a PhD student in the <a href="https://cse.osu.edu">Department of Computer Science and Engineering at The Ohio State University</a><svg class="osu-mark" viewBox="0 0 32 32" role="img" aria-label="Ohio State"><title>The Ohio State University</title><path fill="currentColor" fill-rule="evenodd" d="M9 2h14l7 7v14l-7 7H9l-7-7V9l7-7zm3 7-3 3v8l3 3h8l3-3v-8l-3-3h-8z"/></svg>, advised by <a href="https://sites.google.com/view/sachinkumar">Sachin Kumar</a>. I am broadly interested in multimodal large language models, reasoning, and retrieval-augmented systems, and in understanding how models access information, reason over it, and ultimately become more reliable for the people who use them.</p>
   <p>My current focus is on strengthening the connection between retrieval and reasoning, supporting multilingual and cross-modal understanding, and developing methods that help LLMs handle complex, structured inputs. More generally, I want to help build AI systems that pair strong reasoning with practical usefulness for everyday users.</p>
 </section>
 
