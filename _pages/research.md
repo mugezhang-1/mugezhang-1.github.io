@@ -3,45 +3,45 @@ layout: single
 title: "Research"
 permalink: /research/
 author_profile: true
-description: "Research directions of Muge Zhang: retrieval that serves reasoning in LLMs, multilingual and cross-modal understanding, and complex structured inputs."
+description: "Research of Muge Zhang: multilingual language model pretraining beyond native orthography, cross-lingual reasoning-intensive retrieval, and retrieval-grounded medical reasoning."
 ---
 
 {% include base_path %}
 
-<p class="lead">I want language models to be trustworthy when the answer depends on information they were not trained on. That means getting the right evidence in front of the model, reasoning over it carefully, and doing so in every language and modality a user might bring. My work sits at the intersection of retrieval, reasoning, and multimodal understanding.</p>
+<p class="lead">I work on multilingual NLP, retrieval, and multimodal medical reasoning. The common thread is making language models work when the data was not written for the task at hand: a different writing system, a query that needs reasoning across languages, or a rare clinical case that no guideline covers.</p>
 
 <div class="directions">
-  <article class="direction" id="retrieval-reasoning">
+  <article class="direction" id="romanization">
     <span class="direction__num" aria-hidden="true">01</span>
     <div class="direction__body">
-      <h3>Retrieval that serves reasoning</h3>
-      <p>Retrieval-augmented generation usually treats retrieval and reasoning as separate stages: fetch some passages, then hope the model uses them well. I am interested in closing that gap, so that what a model retrieves is shaped by what it needs to reason about, and its reasoning stays grounded in what it actually retrieved. Questions I care about include when a model should retrieve at all, how to tell useful evidence from distracting evidence, and how to make the resulting answers verifiable.</p>
+      <h3>Pretraining multilingual models beyond native orthography</h3>
+      <p>Multilingual models share knowledge across languages through shared subwords, and that mechanism breaks when related languages use different scripts. In a controlled pretraining study across eight languages in four typological pairs and three model scales, we compared orthographic text, IPA, and romanization as input representations. Romanized pretraining gave the strongest cross-lingual transfer, the gap over native text widened with scale, and the benefit only appears when pretraining from scratch. I built the full stack for this work: modded-nanoGPT with custom BPE tokenizers and multi-node SLURM training on H100s at the Ohio Supercomputer Center. Accepted to <a href="{{ base_path }}/publication/2026-emnlp-romanization">EMNLP 2026</a>.</p>
     </div>
   </article>
-  <article class="direction" id="multilingual-multimodal">
+  <article class="direction" id="cross-lingual-retrieval">
     <span class="direction__num" aria-hidden="true">02</span>
     <div class="direction__body">
-      <h3>Multilingual and cross-modal understanding</h3>
-      <p>Most of the world's information is not in English, and much of it is not text. I study how models can retrieve and reason across languages and modalities, such as answering a question in one language from documents in another, or grounding an answer in a figure, a table, or an image. The goal is for capability to transfer, rather than being rebuilt from scratch for every language and input type.</p>
+      <h3>Cross-lingual reasoning-intensive retrieval</h3>
+      <p>Retrievers that look stable on multilingual benchmarks such as MMTEB collapse on cross-lingual queries that require reasoning, degrading 28 to 35% on the hardest task and language combinations. Same-backbone comparisons and alignment probes point to the cause: the contrastive training recipe, not the backbone or the data language, decides whether cross-lingual alignment survives. Manuscript in preparation.</p>
     </div>
   </article>
-  <article class="direction" id="structured-inputs">
+  <article class="direction" id="medical-reasoning">
     <span class="direction__num" aria-hidden="true">03</span>
     <div class="direction__body">
-      <h3>Complex, structured inputs</h3>
-      <p>Real tasks come with long documents, nested tables, code, and mixed-format records, not tidy paragraphs. I work on methods that help LLMs handle these inputs faithfully: preserving structure when it matters, locating the relevant parts of very long contexts, and combining pieces of evidence that are spread across a document.</p>
+      <h3>Retrieval-grounded medical reasoning</h3>
+      <p>Clinical guidelines cover the common cases, and medical LLMs mostly memorize them. With clinicians at Ohio State we built <a href="{{ base_path }}/publication/2026-ogcarebench">OGCaReBench</a>, a free-form benchmark of expert-validated questions from published case reports; the best model answers 56% without retrieval and up to 82% with it. I am now extending this to images and time: a causal temporal-reasoning benchmark from MIMIC-CXR and MIMIC-IV, where a model sees a prior and a recent chest X-ray plus long EHR context and must identify the event that explains the change, with multimodal reasoners trained by SFT warmup and GRPO-based RL using evidence-grounded rewards.</p>
     </div>
   </article>
 </div>
 
 ## Earlier work
 
-Before starting my PhD, I worked on the systems side of machine learning and on applied ML for medical imaging with [Jeeho Ryoo](https://jhryoo.com)'s group. That work looked at where ML pipelines actually spend their time on modern hardware, and at what to do when good training data is scarce.
+Before Ohio State, I was a research assistant at Fairleigh Dickinson University with Jeeho Ryoo and Wenyun Dai, working on the systems side of machine learning and on applied ML for medical imaging.
 
 <ul class="worklist">
+  <li><strong>Synthetic medical imaging.</strong> Extended Med-DDPM conditional diffusion to synthesize Alzheimer's-specific 3D structural MRIs; training on real plus synthetic scans beat real-only segmentation baselines (<a href="{{ base_path }}/publication/2025-mipr-alzheimers">MIPR 2025</a>).</li>
   <li><strong>Characterizing ML workloads on hardware.</strong> Microarchitectural analysis of the data pre-processing stage in ML pipelines (<a href="{{ base_path }}/publication/2024-acai-preprocessing">ACAI 2024</a>) and of graph neural networks such as LightGCN and ExpressGNN (<a href="{{ base_path }}/publication/2025-hipec-lightgcn">HiPEAC 2025</a>).</li>
-  <li><strong>Learning-based systems.</strong> An AI-powered caching scheme that predicts user behavior on IoT devices (<a href="{{ base_path }}/publication/2024-cyberc-cache">CyberC 2024</a>) and an optimization that scales hierarchical agglomerative clustering to massive datasets (<a href="{{ base_path }}/publication/2024-scalcom-clustering">ScalCom 2024</a>).</li>
-  <li><strong>Synthetic medical imaging.</strong> Generating synthetic MRI scans to expand training data for Alzheimer's disease diagnosis (<a href="{{ base_path }}/publication/2025-mipr-alzheimers">MIPR 2025</a>).</li>
+  <li><strong>Learning-based systems.</strong> A MapReduce hierarchical clustering optimization that runs 9 to 82% faster at over 90% accuracy (<a href="{{ base_path }}/publication/2024-scalcom-clustering">ScalCom 2024</a>) and an AI-powered cache that predicts user behavior on IoT devices (<a href="{{ base_path }}/publication/2024-cyberc-cache">CyberC 2024</a>).</li>
 </ul>
 
 ## Get in touch

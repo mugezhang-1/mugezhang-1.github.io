@@ -6,6 +6,7 @@
   <div class="pub__meta">
     <span class="pub__venue">{{ pub.venue_short | default: pub.venue }}</span>
     {%- if pub.type %}<span class="pub__type">{{ pub.type }}</span>{% endif -%}
+    {%- if pub.status %}<span class="pub__type">{{ pub.status }}</span>{% endif -%}
     <span class="pub__year">{{ year }}</span>
   </div>
   <h3 class="pub__title"><a href="{{ base_path }}{{ pub.url }}">{{ pub.title }}</a></h3>

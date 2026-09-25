@@ -2,7 +2,7 @@
 permalink: /
 layout: home
 title: "Muge Zhang"
-description: "Personal website of Muge Zhang, PhD student in Computer Science and Engineering at The Ohio State University, working on multimodal LLMs, reasoning, and retrieval-augmented systems."
+description: "Personal website of Muge Zhang, PhD student in Computer Science and Engineering at The Ohio State University, working on multilingual NLP, retrieval, and multimodal medical reasoning."
 author_profile: true
 redirect_from:
   - /about/
@@ -14,7 +14,7 @@ redirect_from:
 <section class="hero">
   <p class="eyebrow">PhD student · Computer Science and Engineering · The Ohio State University</p>
   <h1 class="hero__title">Hi, I'm Muge.</h1>
-  <p class="hero__lead">I study how large language models find information, reason over it, and become more reliable and useful for real-world tasks.</p>
+  <p class="hero__lead">I work on multilingual NLP, retrieval, and multimodal medical reasoning: how language models transfer across writing systems, find the right evidence, and reason over clinical data.</p>
   <div class="hero__actions">
     <a class="btn btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
     <a class="btn btn--outline" href="{{ base_path }}/cv/"><i class="fas fa-file-lines" aria-hidden="true"></i>CV</a>
@@ -58,11 +58,11 @@ redirect_from:
 <section class="section" id="interests">
   <h2>Research interests</h2>
   <ul class="chips">
-    <li>Multimodal large language models</li>
+    <li>Multilingual NLP</li>
+    <li>Language model pretraining</li>
+    <li>Retrieval and RAG</li>
+    <li>Multimodal medical reasoning</li>
     <li>Reasoning and inference</li>
-    <li>Retrieval-augmented generation</li>
-    <li>Multilingual and cross-modal understanding</li>
-    <li>Complex information processing</li>
   </ul>
   <p><a class="section__more" href="{{ base_path }}/research/">Read about my research directions<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
 </section>

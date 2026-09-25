@@ -8,7 +8,7 @@ venue: "IEEE 24th International Conference on Scalable Computing and Communicati
 venue_short: "ScalCom 2024"
 authors: "W. Dai, M. Zhang"
 tags: [Data Mining, Scalable Computing]
-selected: true
+selected: false
 paperurl: "https://ieeexplore.ieee.org/document/10925041"
 excerpt: "Speeds up hierarchical agglomerative clustering on massive datasets by filtering observations by their distance to centroids and keeping only the marginal ones that matter."
 citation: "Dai, W., & Zhang, M. (2024). Hierarchical Agglomerative Clustering Optimization for Massive Data. <i>IEEE 24th International Conference on Scalable Computing and Communications (ScalCom)</i>. IEEE."

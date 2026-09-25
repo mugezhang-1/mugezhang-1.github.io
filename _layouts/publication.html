@@ -18,6 +18,7 @@ layout: default
         <p class="eyebrow">
           <span class="pub__venue">{{ page.venue_short | default: page.venue }}</span>
           {%- if page.type %}<span class="pub__type">{{ page.type }}</span>{% endif -%}
+          {%- if page.status %}<span class="pub__type">{{ page.status }}</span>{% endif -%}
           <span class="pub__year">{{ page.date | date: "%Y" }}</span>
         </p>
         <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
