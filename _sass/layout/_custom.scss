@@ -219,16 +219,14 @@ $sidebar-gap: 3.5rem;
   }
 
   .hero + .section h2 { margin-top: 1.75em; }
-
-/* Small scarlet block-O mark after the Ohio State mention */
-.osu-mark {
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  margin-left: 0.3em;
-  vertical-align: -0.15em;
-  color: var(--accent);
-}
+  /* Official Block O after the Ohio State mention (images/osu-block-o.png) */
+  .osu-mark {
+    display: inline-block;
+    width: auto;
+    height: 1.2em;
+    margin-left: 0.3em;
+    vertical-align: -0.2em;
+  }
 
   /* ---------- Section headers ---------- */
 
