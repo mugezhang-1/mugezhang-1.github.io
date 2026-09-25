@@ -121,6 +121,7 @@ redirect_from:
     <div class="cv__what">
       <strong>Graduate Teaching Associate</strong>
       <span>Department of Computer Science and Engineering, The Ohio State University</span>
+      <span class="cv__meta">Autumn 2026: CSE 3521 Introduction to Artificial Intelligence; CSE 5052 AI for Non-Majors</span>
     </div>
   </div>
   <div class="cv__entry">
