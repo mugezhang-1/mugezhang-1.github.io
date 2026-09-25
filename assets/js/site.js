@@ -1,7 +1,7 @@
 /* ==========================================================================
-   Site interactions: BibTeX toggles, copy buttons, email copy with a toast,
-   the news "show more" control, and two subtle pointer effects (hero glow,
-   card spotlight). Plain JS, no dependencies.
+   Site interactions: BibTeX toggles, copy buttons, email reveal and copy
+   with a toast, the news "show more" control, and a subtle card spotlight
+   that follows the pointer. Plain JS, no dependencies.
    ========================================================================== */
 (function () {
   'use strict';
@@ -41,10 +41,27 @@
     toastTimer = setTimeout(function () { toast.classList.remove('is-visible'); }, 2400);
   };
 
-  /* ---- Email links: copy the address, since mailto: needs a mail client ---- */
-  Array.prototype.forEach.call(document.querySelectorAll('[data-copy-email]'), function (el) {
-    el.addEventListener('click', function () {
-      var address = el.getAttribute('data-copy-email');
+  /* ---- Email: the address is never in the HTML. It is assembled from the reversed
+     data-u/data-d fragments on hover, focus, or click, and clicking copies it
+     (a mailto: link would need a configured mail client). ---- */
+  var unscramble = function (v) { return v.split('').reverse().join(''); };
+  var emailOf = function (el) {
+    return unscramble(el.getAttribute('data-u')) + '@' + unscramble(el.getAttribute('data-d'));
+  };
+  Array.prototype.forEach.call(document.querySelectorAll('[data-u][data-d]'), function (el) {
+    var text = el.querySelector('[data-email-text]');
+    var reveal = function () {
+      if (text && !text.getAttribute('data-shown')) {
+        text.textContent = emailOf(el);
+        text.setAttribute('data-shown', '1');
+      }
+    };
+    el.addEventListener('mouseenter', reveal);
+    el.addEventListener('focus', reveal);
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      reveal();
+      var address = emailOf(el);
       copyText(address).then(function () {
         showToast('Copied ' + address);
       }, function () {
@@ -100,44 +117,6 @@
   var finePointer = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   var okMotion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (!finePointer || !okMotion) return;
-
-  /* Hero glow: a blurred spot that eases toward the pointer while it is over the hero,
-     then drifts back to its resting place. */
-  var hero = document.querySelector('.hero');
-  var glow = hero && hero.querySelector('.hero__glow');
-  if (hero && glow) {
-    var size = 480;
-    var restPoint = function () {
-      var r = hero.getBoundingClientRect();
-      return { x: r.width * 0.8, y: r.height * 0.3 };
-    };
-    var target = restPoint();
-    var pos = { x: target.x, y: target.y };
-    var raf = null;
-    var render = function () {
-      glow.style.transform = 'translate(' + (pos.x - size / 2) + 'px, ' + (pos.y - size / 2) + 'px)';
-    };
-    var step = function () {
-      pos.x += (target.x - pos.x) * 0.07;
-      pos.y += (target.y - pos.y) * 0.07;
-      render();
-      if (Math.abs(target.x - pos.x) > 0.4 || Math.abs(target.y - pos.y) > 0.4) {
-        raf = window.requestAnimationFrame(step);
-      } else {
-        raf = null;
-      }
-    };
-    var kick = function () { if (!raf) raf = window.requestAnimationFrame(step); };
-    hero.addEventListener('pointermove', function (e) {
-      var r = hero.getBoundingClientRect();
-      target = { x: e.clientX - r.left, y: e.clientY - r.top };
-      kick();
-    });
-    hero.addEventListener('pointerleave', function () { target = restPoint(); kick(); });
-    window.addEventListener('resize', function () { target = restPoint(); pos = { x: target.x, y: target.y }; render(); });
-    render();
-    glow.classList.add('is-ready');
-  }
 
   /* Card spotlight: a faint highlight that follows the pointer across a card. */
   Array.prototype.forEach.call(document.querySelectorAll('.pub, .direction'), function (card) {

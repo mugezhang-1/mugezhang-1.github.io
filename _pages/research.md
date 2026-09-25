@@ -37,4 +37,4 @@ description: "Research of Muge Zhang: multilingual language model pretraining be
 
 ## Get in touch
 
-I am always glad to talk with students and researchers who share these interests. The best way to reach me is by [email](mailto:{{ site.author.email }}).
+I am always glad to talk with students and researchers who share these interests. {% assign email_parts = site.author.email | split: "@" %}The best way to reach me is by <a href="#" data-u="{{ email_parts[0] | split: "" | reverse | join: "" }}" data-d="{{ email_parts[1] | split: "" | reverse | join: "" }}" title="Click to copy">email</a>.

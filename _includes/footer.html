@@ -2,10 +2,9 @@
 
 <p class="footer__copy">&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.title }}. Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a>. Updated {{ site.time | date: '%B %Y' }}.</p>
 <ul class="footer__links">
-  {% if site.author.email %}<li><a href="mailto:{{ site.author.email }}" data-copy-email="{{ site.author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i>Email</a></li>{% endif %}
+  {% if site.author.email %}{% assign email_parts = site.author.email | split: "@" %}<li><a href="#" data-u="{{ email_parts[0] | split: "" | reverse | join: "" }}" data-d="{{ email_parts[1] | split: "" | reverse | join: "" }}" title="Click to copy"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i>Email</a></li>{% endif %}
   {% if site.author.googlescholar %}<li><a href="{{ site.author.googlescholar }}"><i class="ai ai-fw ai-google-scholar" aria-hidden="true"></i>Scholar</a></li>{% endif %}
   {% if site.author.github %}<li><a href="https://github.com/{{ site.author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
   {% if site.author.linkedin %}<li><a href="https://www.linkedin.com/in/{{ site.author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>{% endif %}
   {% if site.author.twitter %}<li><a href="https://twitter.com/{{ site.author.twitter }}"><i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i>X</a></li>{% endif %}
-  {% if site.atom_feed.hide != true %}<li><a href="{{ base_path }}/feed.xml"><i class="fas fa-fw fa-rss" aria-hidden="true"></i>RSS</a></li>{% endif %}
 </ul>
