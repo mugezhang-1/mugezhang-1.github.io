@@ -47,6 +47,17 @@ redirect_from:
 </section>
 
 <section class="cv__section">
+  <h2>Awards</h2>
+  <div class="cv__entry">
+    <div class="cv__when">2025 – 2026</div>
+    <div class="cv__what">
+      <strong>Graduate School Fellowship</strong>
+      <span>The Ohio State University · first year of the PhD</span>
+    </div>
+  </div>
+</section>
+
+<section class="cv__section">
   <h2>Research experience</h2>
   <div class="cv__entry">
     <div class="cv__when">2025 – present</div>
@@ -105,6 +116,13 @@ redirect_from:
 
 <section class="cv__section">
   <h2>Work experience</h2>
+  <div class="cv__entry">
+    <div class="cv__when">Aug 2026 – present</div>
+    <div class="cv__what">
+      <strong>Graduate Teaching Associate</strong>
+      <span>Department of Computer Science and Engineering, The Ohio State University</span>
+    </div>
+  </div>
   <div class="cv__entry">
     <div class="cv__when">Sep 2024 – Dec 2024</div>
     <div class="cv__what">

@@ -31,13 +31,13 @@ redirect_from:
   {% assign news = site.data.news | sort: "date" | reverse %}
   <ul class="news">
     {% for item in news %}
-    <li class="news__item"{% if forloop.index > 4 %} data-news-extra hidden{% endif %}>
+    <li class="news__item"{% if forloop.index > 5 %} data-news-extra hidden{% endif %}>
       <time class="news__date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
       <div class="news__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
     </li>
     {% endfor %}
   </ul>
-  {% if news.size > 4 %}
+  {% if news.size > 5 %}
   <button class="linkbtn" type="button" data-news-toggle aria-expanded="false" data-more="Show all {{ news.size }} updates" data-less="Show fewer">Show all {{ news.size }} updates</button>
   {% endif %}
 </section>
@@ -53,14 +53,3 @@ redirect_from:
   </div>
 </section>
 
-<section class="section" id="interests">
-  <h2>Research interests</h2>
-  <ul class="chips">
-    <li>Multilingual NLP</li>
-    <li>Language model pretraining</li>
-    <li>Retrieval and RAG</li>
-    <li>Multimodal medical reasoning</li>
-    <li>Reasoning and inference</li>
-  </ul>
-  <p><a class="section__more" href="{{ base_path }}/research/">Read about my research directions<i class="fas fa-arrow-right" aria-hidden="true"></i></a></p>
-</section>

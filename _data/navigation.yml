@@ -1,8 +1,5 @@
 # Links shown in the site header, in order.
 main:
-  - title: "Research"
-    url: /research/
-
   - title: "Publications"
     url: /publications/
 

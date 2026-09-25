@@ -42,31 +42,52 @@
   };
 
   /* ---- Email: the address is never in the HTML. It is assembled from the reversed
-     data-u/data-d fragments on hover, focus, or click, and clicking copies it
+     data-u/data-d fragments on hover, focus, or click, stays readable for a few
+     seconds after the pointer leaves, and clicking copies it
      (a mailto: link would need a configured mail client). ---- */
   var unscramble = function (v) { return v.split('').reverse().join(''); };
   var emailOf = function (el) {
     return unscramble(el.getAttribute('data-u')) + '@' + unscramble(el.getAttribute('data-d'));
   };
+  var LINGER_MS = 3000;
   Array.prototype.forEach.call(document.querySelectorAll('[data-u][data-d]'), function (el) {
     var text = el.querySelector('[data-email-text]');
+    var hideTimer = null;
     var reveal = function () {
+      clearTimeout(hideTimer);
       if (text && !text.getAttribute('data-shown')) {
-        text.textContent = emailOf(el);
+        text.textContent = unscramble(el.getAttribute('data-u'));
         text.setAttribute('data-shown', '1');
       }
+      el.classList.add('is-revealed');
     };
-    el.addEventListener('mouseenter', reveal);
-    el.addEventListener('focus', reveal);
-    el.addEventListener('click', function (e) {
-      e.preventDefault();
+    var hideLater = function () {
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(function () { el.classList.remove('is-revealed'); }, LINGER_MS);
+    };
+    var copy = function () {
       reveal();
+      hideLater();
       var address = emailOf(el);
       copyText(address).then(function () {
         showToast('Copied ' + address);
       }, function () {
         showToast(address);
       });
+    };
+    el.addEventListener('mouseenter', reveal);
+    el.addEventListener('mouseleave', hideLater);
+    el.addEventListener('focus', reveal);
+    el.addEventListener('blur', hideLater);
+    el.addEventListener('click', function (e) {
+      e.preventDefault();
+      /* If the visitor is selecting the address with the mouse, leave the selection alone. */
+      var sel = window.getSelection ? window.getSelection() : null;
+      if (sel && sel.toString() && sel.anchorNode && el.contains(sel.anchorNode)) return;
+      copy();
+    });
+    el.addEventListener('keydown', function (e) {
+      if (el.tagName !== 'A' && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); copy(); }
     });
   });
 
@@ -119,7 +140,7 @@
   if (!finePointer || !okMotion) return;
 
   /* Card spotlight: a faint highlight that follows the pointer across a card. */
-  Array.prototype.forEach.call(document.querySelectorAll('.pub, .direction'), function (card) {
+  Array.prototype.forEach.call(document.querySelectorAll('.pub'), function (card) {
     card.classList.add('has-spotlight');
     card.addEventListener('pointermove', function (e) {
       var r = card.getBoundingClientRect();

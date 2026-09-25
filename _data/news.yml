@@ -1,7 +1,11 @@
 # Newest first. `text` supports Markdown.
+- date: 2026-08-26
+  text: "Started as a teaching assistant in the CSE department this semester (Autumn 2026)."
 - date: 2026-08-25
   text: "Our paper on pretraining multilingual language models with romanized input, [One Form to Transfer Them All](https://arxiv.org/abs/2608.25904), was accepted to EMNLP 2026. Preprint on [arXiv](https://arxiv.org/abs/2608.25904)."
 - date: 2026-05-20
   text: "New preprint: [When Cases Get Rare](https://arxiv.org/abs/2605.21807), a retrieval benchmark for off-guideline clinical question answering built from expert-validated case reports."
+- date: 2025-08-02
+  text: "Awarded a Graduate School Fellowship from The Ohio State University for my first year of the PhD."
 - date: 2025-08-01
   text: "Started my PhD in Computer Science and Engineering at [The Ohio State University](https://cse.osu.edu), advised by [Sachin Kumar](https://sites.google.com/view/sachinkumar)."
