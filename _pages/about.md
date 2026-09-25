@@ -14,6 +14,10 @@ redirect_from:
 <section class="hero">
   <p class="eyebrow">PhD student · Computer Science and Engineering · The Ohio State University</p>
   <h1 class="hero__title">Hi, I'm Muge.</h1>
+<p class="hero__name">
+  <span class="hero__ipa" lang="und-fonipa" title="IPA pronunciation of Muge Zhang">/mu gə ʈʂaŋ/</span>
+  <a class="pill" href="https://www.name-coach.com/muge-zhang" target="_blank" rel="noopener"><i class="fas fa-fw fa-volume-high" aria-hidden="true"></i>Hear my name</a>
+</p>
   <p class="hero__lead">I work on multilingual NLP, retrieval, and multimodal medical reasoning: how language models transfer across writing systems, find the right evidence, and reason over clinical data.</p>
   <div class="hero__actions">
     <a class="btn btn--primary" href="{{ site.author.googlescholar }}" target="_blank" rel="noopener"><i class="ai ai-google-scholar" aria-hidden="true"></i>Google Scholar</a>
