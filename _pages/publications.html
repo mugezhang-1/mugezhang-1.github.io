@@ -8,23 +8,18 @@ description: "Publications by Muge Zhang."
 
 {% include base_path %}
 {% assign pubs = site.publications | sort: "date" | reverse %}
-{% capture years_s %}{% for p in pubs %}{{ p.date | date: "%Y" }},{% endfor %}{% endcapture %}
-{% assign years = years_s | split: "," | uniq %}
-{% capture tags_s %}{% for p in pubs %}{% for t in p.tags %}{{ t }},{% endfor %}{% endfor %}{% endcapture %}
-{% assign tags = tags_s | split: "," | uniq | sort %}
 
-<p class="lead">Papers and posters, newest first. Filter by year or topic, and open BibTeX to copy a citation.{% if site.author.googlescholar %} Also listed on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.{% endif %}</p>
+<p class="lead">Papers and posters, newest first. Open BibTeX to copy a citation.{% if site.author.googlescholar %} Also listed on <a href="{{ site.author.googlescholar }}">Google Scholar</a>.{% endif %}</p>
 
-<div class="filters" data-pub-filters role="group" aria-label="Filter publications">
-  <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
-  <span class="filters__sep" aria-hidden="true"></span>
-  {% for y in years %}<button class="chip" type="button" data-filter="{{ y }}" aria-pressed="false">{{ y }}</button>{% endfor %}
-  <span class="filters__sep" aria-hidden="true"></span>
-  {% for t in tags %}<button class="chip" type="button" data-filter="{{ t }}" aria-pressed="false">{{ t }}</button>{% endfor %}
-</div>
-<p class="filters__count" data-pub-count aria-live="polite">{{ pubs.size }} publications</p>
-
-<div class="pub-list">
-  {% for pub in pubs %}{% include publication-item.html pub=pub %}{% endfor %}
-</div>
-<p class="pub-list__empty" data-pub-empty hidden>Nothing matches that filter.</p>
+{% assign current_year = "" %}
+{% for pub in pubs %}
+  {% assign y = pub.date | date: "%Y" %}
+  {% if y != current_year %}
+    {% unless forloop.first %}</div>{% endunless %}
+    <h2 class="pub-year" id="y{{ y }}">{{ y }}</h2>
+    <div class="pub-list">
+    {% assign current_year = y %}
+  {% endif %}
+  {% include publication-item.html pub=pub hide_year=true %}
+  {% if forloop.last %}</div>{% endif %}
+{% endfor %}

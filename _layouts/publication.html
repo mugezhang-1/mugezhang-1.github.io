@@ -24,7 +24,6 @@ layout: default
         <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
         {%- if page.authors %}<p class="pub__authors">{{ page.authors | replace: "M. Zhang", '<strong class="pub__me">M. Zhang</strong>' }}</p>{% endif -%}
         <p class="pub__venue-full">{{ page.venue }}</p>
-        {%- if page.tags %}<ul class="pub__tags">{% for t in page.tags %}<li>{{ t }}</li>{% endfor %}</ul>{% endif %}
         {% include publication-actions.html pub=page pid=pid %}
       </header>
 

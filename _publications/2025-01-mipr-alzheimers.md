@@ -8,7 +8,7 @@ venue: "8th IEEE International Conference on Multimedia Information Processing a
 venue_short: "MIPR 2025"
 authors: "M. Zhang, M. A. Khaliq, B. K. Lee, J. Ryoo"
 tags: [Medical Imaging, Generative Models]
-selected: true
+selected: false
 excerpt: "Generates synthetic brain MRI scans with machine learning to expand scarce training data for Alzheimer's disease diagnosis."
 citation: "Zhang, M., Khaliq, M. A., Lee, B. K., & Ryoo, J. (2025). Synthetic Magnetic Resonance Imaging Generation for the Diagnosis of Alzheimer's Disease using Machine Learning. <i>8th IEEE International Conference on Multimedia Information Processing and Retrieval (MIPR)</i>, San Jose, CA, USA. IEEE."
 bibtex: |

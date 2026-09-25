@@ -34,15 +34,6 @@ description: "Research of Muge Zhang: multilingual language model pretraining be
   </article>
 </div>
 
-## Earlier work
-
-Before Ohio State, I was a research assistant at Fairleigh Dickinson University with Jeeho Ryoo and Wenyun Dai, working on the systems side of machine learning and on applied ML for medical imaging.
-
-<ul class="worklist">
-  <li><strong>Synthetic medical imaging.</strong> Extended Med-DDPM conditional diffusion to synthesize Alzheimer's-specific 3D structural MRIs; training on real plus synthetic scans beat real-only segmentation baselines (<a href="{{ base_path }}/publication/2025-mipr-alzheimers">MIPR 2025</a>).</li>
-  <li><strong>Characterizing ML workloads on hardware.</strong> Microarchitectural analysis of the data pre-processing stage in ML pipelines (<a href="{{ base_path }}/publication/2024-acai-preprocessing">ACAI 2024</a>) and of graph neural networks such as LightGCN and ExpressGNN (<a href="{{ base_path }}/publication/2025-hipec-lightgcn">HiPEAC 2025</a>).</li>
-  <li><strong>Learning-based systems.</strong> A MapReduce hierarchical clustering optimization that runs 9 to 82% faster at over 90% accuracy (<a href="{{ base_path }}/publication/2024-scalcom-clustering">ScalCom 2024</a>) and an AI-powered cache that predicts user behavior on IoT devices (<a href="{{ base_path }}/publication/2024-cyberc-cache">CyberC 2024</a>).</li>
-</ul>
 
 ## Get in touch
 

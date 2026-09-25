@@ -1,54 +1,9 @@
 /* ==========================================================================
-   Site interactions: publication filters, BibTeX toggles, copy buttons,
-   and the news "show more" control. Plain JS, no dependencies.
+   Site interactions: BibTeX toggles, copy buttons, and the news
+   "show more" control. Plain JS, no dependencies.
    ========================================================================== */
 (function () {
   'use strict';
-
-  /* ---- Publication filters ---- */
-  var bar = document.querySelector('[data-pub-filters]');
-  if (bar) {
-    var items = Array.prototype.slice.call(document.querySelectorAll('[data-pub]'));
-    var chips = Array.prototype.slice.call(bar.querySelectorAll('[data-filter]'));
-    var count = document.querySelector('[data-pub-count]');
-    var empty = document.querySelector('[data-pub-empty]');
-
-    var apply = function (filter) {
-      var shown = 0;
-      items.forEach(function (el) {
-        var tags = (el.getAttribute('data-tags') || '').split('|');
-        var ok = filter === 'all' || el.getAttribute('data-year') === filter || tags.indexOf(filter) !== -1;
-        el.hidden = !ok;
-        if (ok) shown++;
-      });
-      chips.forEach(function (c) {
-        var active = c.getAttribute('data-filter') === filter;
-        c.classList.toggle('is-active', active);
-        c.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
-      if (count) {
-        count.textContent = filter === 'all'
-          ? items.length + ' publications'
-          : shown + ' of ' + items.length + ' publications';
-      }
-      if (empty) empty.hidden = shown !== 0;
-    };
-
-    chips.forEach(function (c) {
-      c.addEventListener('click', function () {
-        var f = c.getAttribute('data-filter');
-        apply(f);
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState(null, '', f === 'all' ? window.location.pathname : '#' + encodeURIComponent(f));
-        }
-      });
-    });
-
-    var initial = 'all';
-    try { initial = decodeURIComponent(window.location.hash.slice(1)) || 'all'; } catch (e) { /* ignore */ }
-    var known = chips.some(function (c) { return c.getAttribute('data-filter') === initial; });
-    apply(known ? initial : 'all');
-  }
 
   /* ---- BibTeX toggles ---- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-bibtex-toggle]'), function (btn) {
