@@ -31,13 +31,13 @@ redirect_from:
   {% assign news = site.data.news | sort: "date" | reverse %}
   <ul class="news">
     {% for item in news %}
-    <li class="news__item"{% if forloop.index > 5 %} data-news-extra hidden{% endif %}>
+    <li class="news__item"{% if forloop.index > 6 %} data-news-extra hidden{% endif %}>
       <time class="news__date" datetime="{{ item.date | date: '%Y-%m-%d' }}">{{ item.date | date: "%b %Y" }}</time>
       <div class="news__text">{{ item.text | markdownify | remove: '<p>' | remove: '</p>' }}</div>
     </li>
     {% endfor %}
   </ul>
-  {% if news.size > 5 %}
+  {% if news.size > 6 %}
   <button class="linkbtn" type="button" data-news-toggle aria-expanded="false" data-more="Show all {{ news.size }} updates" data-less="Show fewer">Show all {{ news.size }} updates</button>
   {% endif %}
 </section>
